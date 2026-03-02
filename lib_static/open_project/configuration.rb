@@ -103,7 +103,7 @@ module OpenProject
           :redis_cache_store,
           {
             url:,
-            error_handler: ->(method:, exception:) {
+            error_handler: ->(method:, returning: nil, exception:) {
               OpenProject.logger.error("Error in redis cache store #{method}: #{exception.message}", exception:)
             }
           }
